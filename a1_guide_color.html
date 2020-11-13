@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+
+        body {
+            width: 100%;
+            position: relative;
+            background-image: url(1/a1psd_guide.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+           font-family: 'Raleway', sans-serif;
+        }
+
+        .color_top {
+            width: 1200px;
+            height: 110px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .color_a {
+            width: 1200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            margin: 300px auto;
+            padding-top:90px;
+        }
+
+            .color_a > a {
+                width: 110px;
+                height: 110px;
+                overflow: hidden;
+                position: relative;
+                /*border: 2px solid red;*/
+                border-radius: 110px;
+                box-sizing: border-box;
+                cursor:pointer;
+                z-index:99;
+                float:left;
+            }
+                .color_a > a:nth-child(3) {
+                    margin-left: 26px;
+                }
+                .color_a > a:nth-child(4) {
+                    margin-left: 27px;
+                }
+                .color_a > a:nth-child(5) {
+                    margin-left: 25px;
+                }
+                .color_a > a:nth-child(6) {
+                    margin-left: 25px;
+                }
+                .color_a > a:nth-child(7) {
+                    margin-left: 25px;
+                }
+                .color_a > a:nth-child(8) {
+                    margin-left: 29px;
+                }
+                .color_a > a:nth-child(9) {
+                    margin-left: 25px;
+                }
+                .color_a > a:nth-child(10) {
+                    margin-left: 26px;
+                }
+
+        #box_color {
+            width: 1200px;
+            height:1000px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border:1px solid white;*/
+            box-sizing:border-box;
+            margin-top:-500px;
+            margin-bottom:200px;
+            padding-top:220px;
+        }
+            #box_color > img {
+                position: relative;
+                margin: 0 auto;
+                display:none;
+            }
+            
+    </style>
+    <link rel="stylesheet" href="colorbox.css" />
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="jquery.colorbox.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.white',this).click(function () {
+                $('#box_color').show();
+                $('#box_white').css({ display: 'block' });
+                $('#box_gray,#box_red,#box_pink,#box_yellow,#box_brown,#box_green,#box_blue,#box_purple').css({display:'none'});
+            })
+            $('.gray', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_gray').css({ display: 'block' });
+                $('#box_white,#box_red,#box_pink,#box_yellow,#box_brown,#box_green,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.red', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_red').css({ display: 'block' });
+                $('#box_gray,#box_white,#box_pink,#box_yellow,#box_brown,#box_green,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.pink', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_pink').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_yellow,#box_brown,#box_green,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.yellow', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_yellow').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_pink,#box_brown,#box_green,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.brown', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_brown').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_pink,#box_yellow,#box_green,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.green', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_green').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_pink,#box_yellow,#box_brown,#box_blue,#box_purple').css({ display: 'none' });
+            })
+            $('.blue', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_blue').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_pink,#box_yellow,#box_brown,#box_green,#box_purple').css({ display: 'none' });
+            })
+            $('.purple', this).click(function () {
+                $('#box_color').show('slow');
+                $('#box_purple').css({ display: 'block' });
+                $('#box_white,#box_gray,#box_red,#box_pink,#box_yellow,#box_brown,#box_green,#box_blue').css({ display: 'none' });
+            })
+        });
+    </script>
+</head>
+<body>
+
+    <div class="color_a">
+
+        <img src="1/a1_guide_color1.png" class="color_top" />
+
+        <a href="#box_white" class="box white" rel="C"></a>
+        <a href="#box_gray"class="box gray" rel="C"></a>
+        <a href="#box_red"class="box red" rel="C"></a>
+        <a href="#box_pink"class="box pink" rel="C"></a>
+        <a href="#box_yellow"class="box yellow" rel="C"></a>
+        <a href="#box_brown"class="box brown" rel="C"></a>
+        <a href="#box_green" class="box green" rel="C"></a>
+        <a href="#box_blue" class="box blue" rel="C"></a>
+        <a href="#box_purple" class="box purple" rel="C"></a>
+
+    </div>
+
+    <div id="box_color">
+        <img src="1/color_white.png" id="box_white"/>
+        <img src="1/color_gray.png" id="box_gray"/>
+        <img src="1/color_red.png" id="box_red" />
+        <img src="1/color_pink.png" id="box_pink" />
+        <img src="1/color_yellow.png" id="box_yellow" />
+        <img src="1/color_brown.png" id="box_brown" />
+        <img src="1/color_green.png" id="box_green" />
+        <img src="1/color_blue.png" id="box_blue" />
+        <img src="1/color_purple.png" id="box_purple" />
+    </div>
+
+</body>
+</html>

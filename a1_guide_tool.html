@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+
+        body {
+            width: 100%;
+            position: relative;
+            background-image: url(1/a1psd_guide.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+           font-family: 'Raleway', sans-serif;
+        }
+
+        .grid {
+            /*background: #EEE;*/
+            width:1300px;
+            margin:300px auto;
+            padding-left:20px;
+            box-sizing:border-box;
+        }
+
+            /* clearfix */
+            .grid:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+        /* ---- grid-item ---- */
+
+        .grid-item {
+            width: 300px;
+            height: 220px;
+            overflow:hidden;
+            float: left;
+            /*background: #D26;*/
+            border: 2px solid #333;
+            border-color: #cfecef;
+            border-radius: 5px;
+            margin-top:20px;
+        }
+        .grid-item h2 {
+            line-height:220px;
+            text-align:center;
+            color:#cfecef;
+        }
+            .grid-item p {
+                padding: 20px;
+                box-sizing:border-box;
+                color:white;
+            }
+
+        .grid-item--gigante {
+            font-size:32px;
+            width: 620px;
+            height: 710px;
+            margin-top:20px;
+            
+            background-color:rgba(49,49,49,0.9);
+        }
+            .grid-item--gigante:nth-child(1) {
+                background-image: url(1/mouse1.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+        .grid-item:hover {
+            background-color:rgba(49,49,49,0.4);
+            /*background: rgba(189, 189, 189,0.9);*/
+            /*border-color: white;*/
+            cursor: pointer;
+        }
+
+        .select_left {
+            width: 50%;
+            overflow: hidden;
+            position:relative;
+            left: 0;
+            top: 0;
+            text-align:center;
+            float:left;
+            
+        }
+        .select_right {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            left: 50px;
+            top: 0px;
+        }
+        .grid-item > div {
+            font-size:20px;
+            margin-top:70px;
+        }
+            .grid-item > div > img {
+                margin: 0 auto;
+            }
+
+        .grid-item--height {
+            width: 300px;
+            height: 400px;
+            margin-top: 20px;
+            font-size: 32px;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $grid = $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: 20,
+                stagger: 30,
+            });
+
+            $grid
+                .on('click', '.grid-item', function () {
+                // change size of item via class
+                $(this).toggleClass('grid-item--gigante');
+                // trigger layout
+                $grid.masonry();
+                })
+            .on('click', '.grid-item height', function () {
+                $(this).toggleClass('grid-item--height');
+                $grid.masonry();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="grid">
+        <div class="grid-item">
+            <h2>Select</h2>
+            <div class="select_left">
+                <!--<img src="mouse_left.png" />-->
+                <p>1) Select All<br /><br />
+                    :Move, rotation and scale.
+                </p>
+            </div>
+            <div class="select_right">
+                <!--<img src="mouse_right.png"/>-->
+                <p>1) Send to back
+                </p>
+                <p>2) Send to front
+                </p>
+                <p>3) Send backwards
+                </p>
+                <p>4) Send forwards
+                </p>
+                <p>5) Duplicate
+                </p>
+                <p>6) Delete
+                </p>
+            </div>
+        </div>
+        <div class="grid-item height">
+            <h2>Zoom</h2>
+
+        </div>
+        
+        <div class="grid-item height">
+            <h2>History</h2>
+
+        </div>
+        <div class="grid-item width">
+            <h2>Crop&Resize</h2>
+
+        </div>
+
+        <div class="grid-item">
+            <h2>Layer</h2>
+
+        </div>
+        <div class="grid-item">
+            <h2>Text</h2>
+
+        </div>
+        <div class="grid-item">
+            <h2>Fill</h2>
+
+        </div>
+        <div class="grid-item">
+            <h2>New&Open</h2>
+
+        </div>
+        <div class="grid-item">
+            <h2>Save</h2>
+
+        </div>
+        <div class="grid-item">
+            <h2>Setting</h2>
+
+        </div>
+    </div>
+
+</body>
+</html>

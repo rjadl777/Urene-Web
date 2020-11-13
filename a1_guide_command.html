@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+
+        body {
+            width: 100%;
+            position: relative;
+            background-image: url(1/a1psd_guide.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+        }
+
+        .com_box {
+            width: 1200px;
+            height: 2500px;
+            overflow: hidden;
+            position: relative;
+            margin: 300px auto;
+            /*margin-top: 300px;*/
+            border-radius: 30px 30px;
+            /*background: radial-gradient( hsla(199,40%,90%,.7), hsla(0,0%,100%,0) ) no-repeat, linear-gradient( 60deg, purple, dodgerblue, violet );*/
+            /*background-image:url(1/a1_command2.png);*/
+            opacity: 1;
+        }
+        .com_box>span {
+            display:inline-block;
+            position:absolute;
+            overflow:hidden;
+            width:1200px;
+            height:2500px;
+            background: radial-gradient( hsla(199,40%,90%,.7), hsla(0,0%,100%,0) ) no-repeat, linear-gradient( 60deg, purple, dodgerblue, violet );
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color:white;
+            opacity:0.7;
+        }
+            .com_box h2 {
+                width: 100%;
+                height: 80px;
+                /*border: 1px solid white;*/
+                box-sizing: border-box;
+                padding: 20px;
+                padding-left: 50px;
+                color: white;
+            }
+
+        .com_box1 {
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            padding-top: 55px;
+        }
+
+        .com_box2 {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            padding-top: 55px;
+        }
+
+        .com_box3 {
+            width: 100%;
+            height: 322px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            padding-top: 55px;
+        }
+
+        .com_box4 {
+            width: 100%;
+            height: 875px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            padding-top: 135px;
+        }
+
+        .com_box5 {
+            width: 100%;
+            height: 272px;
+            overflow: hidden;
+            position: relative;
+            /*border: 1px solid white;*/
+            box-sizing: border-box;
+            padding-top: 70px;
+        }
+
+        /*box in text*/
+        .text_box1 {
+            width: 1000px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border: 1px solid yellow;*/
+            box-sizing: border-box;
+            color: white;
+        }
+
+            .text_box1 li:nth-child(1) {
+                width: 490px;
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                text-align: right;
+                padding-right: 50px;
+            }
+
+            .text_box1 li:nth-child(2) {
+                width: 9px;
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 42px;
+            }
+
+            .text_box1 li:nth-child(3) {
+                width: 490px;
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                padding-left: 50px;
+            }
+
+        .text_box2 {
+            width: 1000px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border: 1px solid yellow;*/
+            box-sizing: border-box;
+            color: white;
+        }
+
+            .text_box2 li:nth-child(1) {
+                width: 490px;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                text-align: right;
+                padding-right: 50px;
+            }
+
+            .text_box2 li:nth-child(2) {
+                width: 9px;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 42px;
+            }
+
+            .text_box2 li:nth-child(3) {
+                width: 490px;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                padding-left: 50px;
+            }
+
+        .text_box3 {
+            width: 1000px;
+            height: 212px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border: 1px solid yellow;*/
+            box-sizing: border-box;
+            color: white;
+        }
+
+            .text_box3 li:nth-child(1) {
+                width: 490px;
+                height: 212px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                text-align: right;
+                padding-right: 50px;
+            }
+
+            .text_box3 li:nth-child(2) {
+                width: 9px;
+                height: 212px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 42px;
+            }
+
+            .text_box3 li:nth-child(3) {
+                width: 490px;
+                height: 212px;
+                overflow: hidden;
+                position: relative;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                padding-left: 50px;
+            }
+
+        .text_box4 {
+            width: 1000px;
+            height: 605px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border: 1px solid yellow;*/
+            box-sizing: border-box;
+            color: white;
+        }
+
+            .text_box4 li:nth-child(1) {
+                width: 490px;
+                height: 605px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                text-align: right;
+                padding-right: 50px;
+            }
+
+            .text_box4 li:nth-child(2) {
+                width: 9px;
+                height: 605px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 42px;
+            }
+
+            .text_box4 li:nth-child(3) {
+                width: 490px;
+                height: 605px;
+                overflow: hidden;
+                position: relative;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                padding-left: 50px;
+            }
+
+        .text_box5 {
+            width: 1000px;
+            height: 132px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /*border: 1px solid yellow;*/
+            box-sizing: border-box;
+            color: white;
+        }
+
+            .text_box5 li:nth-child(1) {
+                width: 490px;
+                height: 132px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                text-align: right;
+                padding-right: 50px;
+            }
+
+            .text_box5 li:nth-child(2) {
+                width: 9px;
+                height: 132px;
+                overflow: hidden;
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 42px;
+            }
+
+            .text_box5 li:nth-child(3) {
+                width: 490px;
+                height: 132px;
+                overflow: hidden;
+                position: relative;
+                /*border: 1px dotted red;*/
+                box-sizing: border-box;
+                line-height: 42px;
+                padding-left: 50px;
+            }
+
+
+        .text_box1, .text_box2, .text_box3, .text_box4, .text_box5{
+            color: #f2e4cf;
+        }
+        h2 {
+            font-size:48px;
+
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        var URLreg = /(?:\(['|"]?)(.*?)(?:['|"]?\))/;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var supportsBackgroundBlendMode = window.getComputedStyle(document.body).backgroundBlendMode;
+            if (typeof supportsBackgroundBlendMode == 'undefined') {
+                // TODO: maybe check for Canvas composite support?
+                createBlendedBackgrounds();
+            }
+        }, false);
+
+        function createBlendedBackgrounds() {
+            var els = document.querySelectorAll('.com_box');
+            for (var i = 0; i < els.length; i++) {
+                var el = els[i];
+                processElement(el);
+            }
+        }
+
+        function processElement(el) {
+            var style = window.getComputedStyle(el);
+            var backgroundImageURL = URLreg.exec(style.backgroundImage)[1];
+            var backgroundColor = style.backgroundColor;
+            createBlendedBackgroundImageFromURLAndColor(backgroundImageURL, backgroundColor, function (imgData) {
+                el.style.backgroundImage = 'url(' + imgData + ')';
+            });
+        }
+
+        function createBlendedBackgroundImageFromURLAndColor(url, color, callback) {
+            var img = document.createElement('img');
+            img.src = url;
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                canvas.width = this.naturalWidth;
+                canvas.height = this.naturalHeight;
+                var context = canvas.getContext('2d');
+                context.globalCompositeOperation = 'luminosity'
+                context.drawImage(this, 0, 0);
+                context.fillStyle = color;
+                context.fillRect(0, 0, canvas.width, canvas.height);
+                var data = canvas.toDataURL('image/png');
+                callback(data);
+            };
+        }
+    </script>
+</head>
+<body>
+
+    <div class="com_box">
+        <span></span>
+        <h2>Document</h2>
+
+        <div class="com_box1">
+            <ul class="text_box1">
+                <li>Ctrl &nbsp & &nbsp S<br />
+                    Ctrl &nbsp & &nbsp P<br />
+                    Shift &nbsp & &nbsp P<br />
+                    Shift &nbsp & &nbsp D<br />
+                    Shift &nbsp & &nbsp S<br />
+                    Shift &nbsp & &nbsp N<br />
+                    Shift &nbsp & &nbsp O
+                </li>
+                <li>:<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :</li>
+                <li>Save<br />
+                    Quick Print<br />
+                    Advaced Print<br />
+                    Download<br />
+                    Share<br />
+                    New<br />
+                    Open
+                </li>
+            </ul>
+        </div>
+
+        <h2>History</h2>
+
+        <div class="com_box2">
+            <ul class="text_box2">
+                <li>Ctrl &nbsp & &nbsp Z<br />
+                    Shift &nbsp & &nbsp Ctrl &nbsp & &nbsp Z
+                </li>
+                <li>:<br />
+                    :</li>
+                <li>Undo<br />
+                    Redo
+                </li>
+            </ul>
+        </div>
+
+        <h2>Quick Tools</h2>
+
+        <div class="com_box3">
+            <ul class="text_box3">
+                <li>Ctrl<br />
+                    1<br />
+                    2<br />
+                    3<br />
+                    4
+                </li>
+                <li>:<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :</li>
+                <li>Quick Selection<br />
+                    Select<br />
+                    Paint<br />
+                    Zoom<br />
+                    Text
+                </li>
+            </ul>
+        </div>
+
+        <h2>Select Tool</h2>
+
+        <div class="com_box4">
+            <ul class="text_box4">
+                <li>Click<br />
+                    Click &nbsp & &nbsp Drag<br />
+                    Ctrl &nbsp & &nbsp Click<br />
+                    Shift &nbsp & &nbsp Click<br />
+                    Ctrl &nbsp & &nbsp A<br />
+                    ESC<br />
+                    DEL<br />
+                    Ctrl &nbsp & &nbsp C<br />
+                    Ctrl &nbsp & &nbsp X<br />
+                    Ctrl &nbsp & &nbsp V<br />
+                    Ctrl &nbsp & &nbsp [<br />
+                    Ctrl &nbsp & &nbsp ]<br />
+                    Alt &nbsp & &nbsp Ctrl &nbsp & &nbsp [<br />
+                    Alt &nbsp & &nbsp Ctrl &nbsp & &nbsp ]<br />
+
+                </li>
+                <li>:<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :<br />
+                    :
+
+                </li>
+                <li>Select Object<br />
+                    Select Multiple Objects<br />
+                    Subtract from Selection<br />
+                    Add to Selection<br />
+                    Select All<br />
+                    Unselect<br />
+                    Delete<br />
+                    Copy<br />
+                    Cut<br />
+                    Paste<br />
+                    Send Backwards<br />
+                    Send Forwards<br />
+                    Send to Back<br />
+                    Send to Front
+                </li>
+            </ul>
+        </div>
+
+        <h2>Layers pane</h2>
+
+        <div class="com_box5">
+            <ul class="text_box5">
+                <li>Click &nbsp & &nbsp Drag<br />
+                    Ctrl &nbsp & &nbsp Click<br />
+                    Shift &nbsp & &nbsp Click
+                </li>
+                <li>:<br />
+                    :<br />
+                    :</li>
+                <li>Reorganize layer(s)<br />
+                    Select multiple layers one by one<br />
+                    Select multiple layers in a row
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</body>
+</html>

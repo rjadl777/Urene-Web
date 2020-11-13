@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+
+
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        *, *:before, *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+
+        html, body {
+            /*height: 100%;*/
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #605849;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::selection {
+            background: #222;
+            color: white;
+        }
+
+        ::-moz-selection {
+            background: #222;
+            color: white;
+        }
+
+        body * {
+            transform-style: preserve-3d;
+        }
+
+
+
+        body {
+            /*background: radial-gradient( hsla(199,40%,90%,.7), hsla(0,0%,100%,0) ) no-repeat, linear-gradient( 60deg, purple, dodgerblue, violet );*/
+            width: 100%;
+            color: #222;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            position: relative;
+            /*perspective: 70em;*/
+            background-image: url(1/a1psd_guide.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .book > h1, ul, li {
+            float: left;
+        }
+
+        .book h1, li {
+            cursor: default;
+        }
+
+        .book ul {
+            margin-top:40px;
+        }
+
+        .book {
+            height: 80%;
+            max-height: 700px;
+            min-height: 600px;
+            width: 1200px;
+            background-image: linear-gradient( 90deg, hsla(30,40%,50%,.6), hsla(30,40%,20%,.9), hsla(30,40%,50%,.4) 90% ), url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+            position: relative;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: 300px auto;
+            margin-bottom:100px;
+            border: 3px solid hsla(30,10%,20%,1);
+            border-radius: 5px;
+            box-shadow: 0 0 150px hsla(170,0%,0%,.4);
+        }
+
+        .page {
+            height: 100%;
+            width: 50%;
+            line-height: 1.5;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform-origin: 0 50%;
+            transition: .8s;
+            /*animation: unflip .3s linear;*/
+        }
+
+        [class*='side'] {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: hsl(30,40%,70%);
+            background-image: url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+            background-size: 100% 100%;
+            backface-visibility: hidden;
+            overflow: auto;
+            padding: 5% 8%;
+        }
+
+        .side-1 {
+            z-index: 2;
+            box-shadow: inset 50px 0 50px rgba(0,0,0,.5);
+            transition: .5s;
+        }
+
+        .side-2 {
+            transform: rotateY(180deg);
+            box-shadow: inset -50px 0 50px rgba(0,0,0,.5);
+        }
+
+        .flipped > .side-1 {
+            box-shadow: inset 300px 0 50px rgba(0,0,0,.8);
+            transition: .6s;
+        }
+
+        .flipped > [class*='side'] {
+            pointer-events: auto;
+        }
+
+        .page:after {
+            width: 100px;
+            height: 50px;
+            background-color: #555;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -100px;
+            margin: auto;
+            color: white;
+            text-shadow: 0 -1px 0 #222;
+            line-height: 50px;
+            text-align: center;
+            font-family: monospace;
+            content: 'next-page';
+            animation: hide .8s linear;
+        }
+
+        .page.flipped:after {
+            content: 'prev-page';
+            transform: rotateY(180deg);
+            pointer-events: auto;
+        }
+        /* to hide on flip animation */
+        @keyframes hide {
+            0% {
+                opacity: 0;
+            }
+
+            85% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .flipped {
+            transform: rotateY(-180deg);
+            pointer-events: none;
+            /*animation: flip .3s linear;
+  animation-fill-mode: forwards;*/
+        }
+
+        .no-anim,
+        .no-anim:after {
+            animation: none; /* disable animation when page loads */
+        }
+
+        @keyframes flip {
+            to {
+                transform: rotateY(-180deg);
+            }
+        }
+
+        @keyframes unflip {
+            from {
+                transform: rotateY(-180deg);
+            }
+
+            to {
+                transform: rotateY(0deg);
+            }
+        }
+
+        .text_box1 {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .text_box1 > li {
+                line-height: 50px;
+            }
+
+                .text_box1 > li:nth-child(1) {
+                    margin-left: 24px;
+                }
+
+                .text_box1 > li:nth-child(2) {
+                    width: 5px;
+                    overflow: hidden;
+                    margin-left: 90px;
+                    text-align: center;
+                }
+
+                .text_box1 > li:nth-child(3) {
+                    margin-left: 100px;
+                }
+
+        .text_box2 {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .text_box2 > li {
+                line-height: 50px;
+            }
+
+                .text_box2 > li:nth-child(1) {
+                    margin-left: 24px;
+                }
+
+                .text_box2 > li:nth-child(2) {
+                    width: 5px;
+                    overflow: hidden;
+                    margin-left: 30px;
+                    text-align: center;
+                }
+
+                .text_box2 > li:nth-child(3) {
+                    margin-left: 40px;
+                }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <div class='book'>
+        <div id='page-1' class='page no-anim'>
+            <div class='side-1' id='p1'>
+                <div class='content'>
+                    <h1>Table Of Contents</h1>
+
+                    <ul class="text_box1">
+                        <li>* &nbsp; &nbsp; Document<br />
+                            * &nbsp; &nbsp; History<br />
+                            * &nbsp; &nbsp; Quick Tools<br />
+                            * &nbsp; &nbsp; Select Tool<br />
+                            * &nbsp; &nbsp; Layers pane
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- .content -->
+            </div>
+            <!-- .side-1 -->
+            <div class='side-2' id='p2'>
+                <div class='content'>
+
+                    <h1>Document</h1>
+
+                    <ul class="text_box1">
+                        <li>* &nbsp; &nbsp; Ctrl &nbsp & &nbsp S<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp P<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp P<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp D<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp S<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp N<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp O
+                        </li>
+                        <li>:<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :</li>
+                        <li>Save<br />
+                            Quick Print<br />
+                            Advaced Print<br />
+                            Download<br />
+                            Share<br />
+                            New<br />
+                            Open
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- .content -->
+            </div>
+            <!-- .side-2 -->
+        </div>
+        <!-- .page -->
+
+        <div id='page-2' class='page no-anim'>
+            <div class='side-1' id='p3'>
+                <div class='content'>
+
+                    <h1>History</h1>
+                    <ul class="text_box1">
+                        <li>* &nbsp; &nbsp; Ctrl &nbsp & &nbsp Z<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp Ctrl &nbsp & &nbsp Z
+                        </li>
+                        <li>:<br />
+                            :</li>
+                        <li>Undo<br />
+                            Redo
+                        </li>
+                    </ul>
+
+
+
+
+                </div>
+                <!-- .content -->
+            </div>
+            <!-- .side-1 -->
+            <div class='side-2' id='p4'>
+                <div class='content'>
+
+                    <h1>Quick Tools</h1>
+                    <ul class="text_box1">
+                        <li>* &nbsp; &nbsp; Ctrl<br />
+                            * &nbsp; &nbsp; 1<br />
+                            * &nbsp; &nbsp; 2<br />
+                            * &nbsp; &nbsp; 3<br />
+                            * &nbsp; &nbsp; 4
+                        </li>
+                        <li>:<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :</li>
+                        <li>Quick Selection<br />
+                            Select<br />
+                            Paint<br />
+                            Zoom<br />
+                            Text
+                        </li>
+                    </ul>
+
+
+
+
+                </div>
+                <!-- .content -->
+            </div>
+            <!-- .side-2 -->
+        </div>
+        <!-- #page-2 -->
+
+        <div id='page-3' class='page no-anim'>
+            <div class='side-1' id='p5'>
+                <div class='content'>
+
+                    <h1>Select Tool</h1>
+                    <ul class="text_box2">
+                        <li>* &nbsp; &nbsp; Click<br />
+                            * &nbsp; &nbsp; Click &nbsp & &nbsp Drag<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp Click<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp Click<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp A<br />
+                            * &nbsp; &nbsp; ESC<br />
+                            * &nbsp; &nbsp; DEL<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp C<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp X<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp V<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp [<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp ]<br />
+                            * &nbsp; &nbsp; Alt &nbsp & &nbsp Ctrl &nbsp & &nbsp [<br />
+                            * &nbsp; &nbsp; Alt &nbsp & &nbsp Ctrl &nbsp & &nbsp ]<br />
+
+                        </li>
+                        <li>:<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :<br />
+                            :
+
+                        </li>
+                        <li>Select Object<br />
+                            Select Multiple Objects<br />
+                            Subtract from Selection<br />
+                            Add to Selection<br />
+                            Select All<br />
+                            Unselect<br />
+                            Delete<br />
+                            Copy<br />
+                            Cut<br />
+                            Paste<br />
+                            Send Backwards<br />
+                            Send Forwards<br />
+                            Send to Back<br />
+                            Send to Front
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+                </div>
+                <!-- .content -->
+            </div>
+            <!-- .side-1 -->
+            <!--<div id='page-4' class='page no-anim'>-->
+            <div class='side-2' id='p6'>
+                <div class='content'>
+                    <h1>Layers pane</h1>
+                    <ul class="text_box2">
+                        <li>* &nbsp; &nbsp; Click &nbsp & &nbsp Drag<br />
+                            * &nbsp; &nbsp; Ctrl &nbsp & &nbsp Click<br />
+                            * &nbsp; &nbsp; Shift &nbsp & &nbsp Click
+                        </li>
+                        <li>:<br />
+                            :<br />
+                            :</li>
+                        <li>Reorganize layer(s)<br />
+                            Select multiple layers one by one<br />
+                            Select multiple layers in a row
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/book_index.js"></script>
+
+</body>
+</html>

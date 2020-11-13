@@ -1,0 +1,1591 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <!-- color picker -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+
+        body {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #605849;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::selection {
+            background: #222;
+            color: white;
+        }
+
+        ::-moz-selection {
+            background: #222;
+            color: white;
+        }
+
+
+
+
+        .paint_left {
+            width: 100%;
+        }
+
+        .paint_right {
+            width: 100%;
+        }
+
+        .left_paint {
+            width: 85%;
+        }
+
+            .left_paint canvas {
+                /*background-image: url(image/0427McolorWebp.svg);*/
+                width: 100%;
+                height: 100vh;
+                overflow: scroll;
+                position: relative;
+                top: 0;
+                left: 0;
+                float: left;
+                border: 1px solid red;
+                box-sizing: border-box;
+                background: white;
+                z-index: 99;
+            }
+
+            .left_paint img {
+                width: 100%;
+                height: 100vh;
+                overflow: scroll;
+                position: relative;
+                top: 0;
+                left: 0;
+                float: left;
+                border: 1px solid black;
+                box-sizing: border-box;
+                background: white;
+                z-index: 99;
+            }
+
+        .right_menu {
+            width: 15%;
+            max-width: 50%;
+            height: 90vh;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            top: 0;
+            /*border: 1px solid red;*/
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+            .right_menu > h2 {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                position: relative;
+                text-align: center;
+                background: black;
+                margin-top: 0px;
+                z-index: 9999;
+            }
+
+                .right_menu > h2 a {
+                    color: #c6e4e3;
+                    z-index: 9999;
+                }
+
+                .right_menu > h2 > a > img {
+                    width: 152px;
+                    height: 24px;
+                    overflow: hidden;
+                    position: relative;
+                    display: block;
+                    margin-top: 8px;
+                    left: 50%;
+                    margin-left: -76px;
+                }
+
+        .menu_1 {
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+            border-top: 2px solid black;
+            border-bottom: 4px double black;
+            box-sizing: border-box;
+        }
+
+        .right_menu img {
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            cursor: pointer;
+        }
+
+            .right_menu img a {
+                display: block;
+            }
+
+        .menu_2 {
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu_3 {
+            width: 100%;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 4px solid black;
+            box-sizing: border-box;
+        }
+
+        .menu_1 > img {
+            margin-top: 20px;
+            margin-left: 10%;
+        }
+
+        .menu_1 > a {
+            display: block;
+            /*background:red;*/
+            margin-top: 19px;
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+            float: right;
+            right: 24px;
+        }
+
+
+        @media screen and (min-width:1900px) {
+            .menu_1 > a {
+                right: 52px;
+            }
+        }
+
+        .menu_2 > img {
+            margin-top: 20px;
+            margin-left: 10%;
+        }
+
+        .menu_3 > img {
+            margin-left: 10%;
+        }
+
+
+        .save {
+            width: 200px;
+            height: 460px;
+            overflow: hidden;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -230px;
+            background: #808080;
+            z-index: 9999;
+            color: white;
+            font-weight: 600;
+            border: 3px solid black;
+            display: none;
+        }
+
+            .save > p {
+                padding-left: 20px;
+                cursor: pointer;
+            }
+
+                .save > p:first-child {
+                    padding-top: 20px;
+                }
+
+            .save > h2 {
+                width: 30px;
+                height: 30px;
+                overflow: hidden;
+                position: absolute;
+                text-align: center;
+                left: 50%;
+                margin-left: -15px;
+                bottom: 0;
+                line-height: 20px;
+                border-radius: 15px 15px;
+                background: white;
+                color: #808080;
+                cursor: pointer;
+            }
+
+        .import_box {
+            width: 200px;
+            height: 460px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -230px;
+            background: #808080;
+            z-index: 9999;
+            color: white;
+            font-weight: 600;
+            border: 3px solid black;
+            display: none;
+        }
+
+            .import_box > p {
+                padding-left: 20px;
+                cursor: pointer;
+            }
+
+                .import_box > p:first-child {
+                    padding-top: 20px;
+                }
+
+            .import_box > h2 {
+                width: 30px;
+                height: 30px;
+                overflow: hidden;
+                position: absolute;
+                text-align: center;
+                left: 50%;
+                margin-left: -15px;
+                bottom: 0;
+                line-height: 20px;
+                border-radius: 15px 15px;
+                background: white;
+                color: #808080;
+                cursor: pointer;
+            }
+
+        .setting {
+            width: 260px;
+            height: 460px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -230px;
+            margin-left: -130px;
+            z-index: 9999;
+            background: #808080;
+            color: white;
+            font-weight: 600;
+            border: 3px solid black;
+            display: none;
+        }
+
+            .setting p {
+                padding-left: 20px;
+            }
+
+        .autosave > p:first-child {
+            margin-top: 20px;
+        }
+
+        .autosave > span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #40c72b;
+            border-radius: 10px 10px;
+            cursor: pointer;
+        }
+
+
+            .autosave > span:last-child {
+                background: white;
+            }
+
+        .snap > span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            position: absolute;
+            top: 82px;
+            right: 20px;
+            background: white;
+            border-radius: 10px 10px;
+            cursor: pointer;
+        }
+
+            .snap > span:last-child {
+                background: #40c72b;
+            }
+
+        .theme > p {
+            float: left;
+        }
+
+        .theme > select {
+            float: right;
+            margin-right: 20px;
+            background: #515151;
+            border-radius: 5px 5px;
+        }
+
+
+        .setting > h2 {
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            margin-left: -15px;
+            bottom: 0;
+            line-height: 20px;
+            border-radius: 15px 15px;
+            background: white;
+            color: #808080;
+            cursor: pointer;
+        }
+
+        #section_base {
+            width: 100%;
+            height: 60vh;
+            /*overflow: scroll;*/
+            /*overflow-x: hidden;*/
+            position: relative;
+        }
+
+        @media screen and (max-width:1600px) {
+            #section_base {
+                overflow: auto;
+                padding-bottom: 10px;
+            }
+
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+                border: 3px solid #fff;
+            }
+
+            ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {
+                display: block;
+                height: 10px;
+                background: #efefef;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #efefef;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                height: 50px;
+                width: 50px;
+                background: rgba(0,0,0,0.2);
+                -webkit-border-radius: 8px;
+                border-radius: 8px;
+                -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
+            }
+        }
+
+        #select {
+            display: none;
+        }
+
+            #select > button {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                position: relative;
+                text-align: center;
+                background: white;
+                border: none;
+                margin-bottom: 5px;
+            }
+
+                #select > button:hover {
+                    background-color: rgba(0,0,0,0.7);
+                    color: white;
+                    font-weight: 700;
+                }
+
+        #crop {
+            display: none;
+        }
+
+            #crop > select {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                position: relative;
+                border: none;
+                text-align: center;
+                padding-left: 20px;
+            }
+
+
+
+                #crop > select > option {
+                    display: block;
+                    text-align: center;
+                }
+
+        .resize {
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .resize > p {
+                width: 199px;
+                height: 30px;
+                overflow: hidden;
+                position: relative;
+                margin: 0 auto;
+            }
+
+                .resize > p > input {
+                    width: 50px;
+                    height: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    padding-left: 5px;
+                    border-radius: 4px 4px;
+                    border-color: #515151;
+                }
+
+                .resize > p:first-child {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .resize > p:nth-child(1) > select {
+                    width: 60px;
+                    height: 25px;
+                    overflow: hidden;
+                    position: relative;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border-color: #515151;
+                    border-radius: 4px 4px;
+                    background: white;
+                }
+
+                .resize > p:nth-child(2) > select {
+                    width: 59px;
+                }
+
+                .resize > p:last-child {
+                    padding-top: 3px;
+                }
+
+        .lock {
+            width: 60px;
+            height: 25px;
+            overflow: hidden;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-color: #515151;
+            border-radius: 4px 4px;
+            box-sizing: border-box;
+            background: white;
+        }
+
+        .lock2 {
+            width: 60px;
+            height: 25px;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-color: #515151;
+            border-radius: 4px 4px;
+            display: none;
+            background: black;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        @media screen and (max-width:1680px) {
+            .lock {
+                right: 16px;
+            }
+
+            .lock2 {
+                right: 16px;
+            }
+        }
+
+        @media screen and (min-width:1900px) {
+            .lock {
+                right: 16px;
+            }
+
+            .lock2 {
+                right: 16px;
+            }
+        }
+
+        .float_left {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #text {
+            display: none;
+        }
+
+            #text > select {
+                display: block;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                position: relative;
+                border: none;
+                font-weight: 400;
+                padding-left: 20px;
+            }
+
+            #text > p {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+                #text > p:first-child {
+                    margin-top: 0;
+                }
+
+            #text input {
+                width: 100px;
+                height: 20px;
+                line-height: 20px;
+                overflow: hidden;
+                position: relative;
+                padding-left: 5px;
+                border-radius: 4px 4px;
+                border-color: #515151;
+            }
+
+        @media screen and (max-width:1600px) {
+            #text input {
+                width: 50px;
+            }
+        }
+
+        #text > p:last-child {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+            #text > p:last-child > span {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                text-align: left;
+                margin-left: 20px;
+                margin-top: 10px;
+                display: block;
+            }
+
+        .scale_v {
+            position: relative;
+            left: 32px;
+        }
+
+        .scale_h {
+            position: relative;
+            left: 10px;
+        }
+
+        .size_lead {
+            width: 88%;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+            .size_lead > p:first-child {
+                margin-bottom: 10px;
+            }
+
+                .size_lead > p:first-child > input {
+                    margin-left: 40px;
+                }
+
+            .size_lead > p:last-child > input {
+                margin-left: 10px;
+            }
+
+        @media screen and (max-width:1680px) {
+            .size_lead > p:last-child > input {
+                margin-left: 14px;
+            }
+        }
+
+        @media screen and (min-width:1900px) {
+            .size_lead > p:last-child > input {
+                margin-left: 14px;
+            }
+        }
+
+        .tracking {
+            overflow: hidden;
+            position: relative;
+            padding-top: 30px;
+            margin-left: 20px;
+            margin-bottom: -10px;
+        }
+
+            .tracking > input {
+                position: relative;
+                left: 30px;
+            }
+
+
+        /*Zoom*/
+        .zoom_range {
+            display: block;
+            position: relative;
+        }
+
+        .scrollbar > input {
+            margin-left: 23px;
+            width: 160px;
+            height: 28px;
+            overflow: hidden;
+            z-index: 9;
+        }
+
+        .scrollbar {
+            background-image: url(1/scrollbar3.png);
+            /*background-size: cover;*/
+            margin-top: 30px;
+            margin-left: 20px;
+            width: 235px;
+            height: 27px;
+            overflow: hidden;
+            position: relative;
+            /*border:2px solid red;*/
+            box-sizing: border-box;
+        }
+
+        #zoom {
+            display: none;
+            /*background:yellow;*/
+            width: 100%;
+            height: 300px;
+        }
+
+        @media screen and (max-width:1600px) {
+            .scrollbar {
+                background-size: 85%;
+                background-repeat: no-repeat;
+            }
+
+                .scrollbar > input {
+                    margin-left: 20px;
+                    margin-top: -2px;
+                    width: 135px;
+                }
+
+            .min_btn {
+                /*background:red;*/
+                left: -30px;
+            }
+
+            .screen_btn {
+                /*background: blue;*/
+                margin-right: 32px;
+            }
+        }
+
+        @media screen and (max-width:1680px) {
+            .scrollbar {
+                background-size: 90%;
+                background-repeat: no-repeat;
+            }
+
+                .scrollbar > input {
+                    margin-left: 20px;
+                    margin-top: -2px;
+                    width: 144px;
+                }
+
+            .min_btn {
+                /*background:red;*/
+                left: -20px;
+            }
+
+            .screen_btn {
+                /*background: blue;*/
+                margin-right: 22px;
+            }
+        }
+
+        #zoom > .zoom_btn {
+            margin-left: 24px;
+            margin-top: -23px;
+            width: 235px;
+            height: 30px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .zoom_btn p {
+            width: 19px;
+            height: 19px;
+            overflow: hidden;
+            border-radius: 19px;
+            position: absolute;
+            /*background:red;*/
+            cursor: pointer;
+        }
+
+        .min_btn {
+            margin-left: 178px;
+        }
+
+        .screen_btn {
+            right: 12px;
+        }
+
+        .zoom_control {
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .zoom_control > p {
+                width: 199px;
+                height: 30px;
+                overflow: hidden;
+                position: relative;
+                margin: 0 auto;
+            }
+
+                .zoom_control > p > input {
+                    width: 50px;
+                    height: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    padding-left: 5px;
+                    border-radius: 4px 4px;
+                    border-color: #515151;
+                }
+
+                .zoom_control > p:first-child {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .zoom_control > p:nth-child(1) > select {
+                    width: 60px;
+                    height: 25px;
+                    overflow: hidden;
+                    position: relative;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border-color: #515151;
+                    border-radius: 4px 4px;
+                    background: white;
+                }
+
+                .zoom_control > p:nth-child(2) > select {
+                    width: 59px;
+                }
+
+                .zoom_control > p:last-child {
+                    padding-top: 3px;
+                }
+
+
+        /*color picker*/
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 767px) {
+            .affix {
+                position: static;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 979px) {
+            .form-horizontal .control-label {
+                width: 80px;
+            }
+
+            .form-horizontal .controls {
+                margin-left: 100px;
+            }
+        }
+
+        .row-fluid {
+            margin-top: 10px;
+        }
+
+        /*button click height 200px open > button click height 40px close*/
+
+
+        #paint {
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            display: none;
+            /*background:green;*/
+        }
+
+            #paint > select {
+                display: block;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                position: relative;
+                border: none;
+                font-weight: 400;
+                margin-bottom: 450px;
+            }
+
+            #paint > p {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+                #paint > p:first-child {
+                    margin-top: 0;
+                }
+
+
+
+        .paint_box {
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+            /*background:white;*/
+            margin: 30px 0px auto;
+        }
+
+            .paint_box > p {
+                width: 45px;
+                height: 45px;
+                overflow: hidden;
+                border: 1px solid black;
+                box-sizing: border-box;
+                border-radius: 5px;
+                background: white;
+                float: left;
+                margin-top: 5px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+                .paint_box > p > span {
+                    display: block;
+                    font-size: 9px;
+                    text-align: center;
+                    line-height: 14px;
+                }
+
+        @media screen and (max-width:1600px) {
+            .paint_box {
+                margin-top: 20px;
+            }
+
+                .paint_box > p {
+                    margin-left: 10px;
+                }
+
+            #paint > select {
+                margin-bottom: 300px;
+            }
+
+            #paint {
+                height: 58vh;
+            }
+        }
+
+        #lala {
+            margin-top: 20px;
+            /*margin-left: 20px;*/
+            border: 2px solid black;
+            width: 80%;
+            height: 200px;
+            position: relative;
+            display: block;
+            margin: 20px auto;
+            background: white;
+        }
+
+        #navigate {
+            display: none;
+        }
+
+        /*.sp-container sp-hidden {
+            display: block;
+        }
+
+        .container-fluid {
+            display: block;
+            
+        }*/
+
+
+        .other_btn {
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            position: absolute;
+            right:110px;
+            bottom:-50px;
+            z-index: -99;
+            /*background: red;*/
+            border:2px solid red;
+            border-radius: 20px;
+            opacity:0.4;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+
+    <!--<script src="index1.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            $('.lock')
+                .on('click', function () {
+                    $('.lock').css({ display: 'none' })
+                    $('.lock2').css({ display: 'block', right: '16px', top: '0' })
+                });
+            $('.lock2')
+            .on('click', function () {
+                $('.lock2').css({ display: 'none' })
+                $('.lock').css({ display: 'block', right: '16px', top: '0' })
+            });
+            //right:'0' (width:1900px)
+
+
+            $('.menu_1>img:nth-child(1)')
+            .on('click', function () {
+                $('.save').css('display', 'block');
+                $('.setting,.import_box').css('display', 'none');
+            });
+
+            $('.save>h2')
+            .on('click', function () {
+                $('.save').css('display', 'none');
+            });
+
+            $('.save>p')
+            .on('mouseover', function () {
+                $(this).css('color', 'black')
+            .on('mouseleave', function () {
+                $(this).css('color', 'white');
+            })
+            })
+
+            $('.menu_1>img:nth-child(2)')
+            .on('click', function () {
+                $('.import_box').css('display', 'block');
+                $('.save,.setting').css('display', 'none');
+            })
+
+            $('.import_box>h2')
+            .on('click', function () {
+                $('.import_box').css('display', 'none');
+            });
+
+            $('.import_box>p')
+            .on('mouseover', function () {
+                $(this).css('color', 'black')
+            .on('mouseleave', function () {
+                $(this).css('color', 'white');
+            })
+            })
+
+            $('.menu_1>img:nth-child(3)')
+            .on('click', function () {
+                $('.setting').css('display', 'block');
+                $('.save,.import_box').css('display', 'none');
+            })
+
+            $('.setting>h2')
+            .on('click', function () {
+                $('.setting').css('display', 'none');
+            });
+
+
+            $('.autosave>span')
+                .on('click', function () {
+                    $('.autosave>span:last-child').toggle();
+                });
+
+            $('.snap>span')
+                .on('click', function () {
+                    $('.snap>span:last-child').toggle();
+                });
+
+            //$('.menu_1>img:nth-child(4)')
+            //.click(function () {
+            //    $('html').load('a1_guide.html')
+            //})
+
+
+
+            $('.menu_2>img:nth-child(1)')
+            .on('click', function () {
+                $('#select').css('display', 'block');
+
+                $('#crop,#text,#paint,#zoom,#navigate').css('display', 'none');
+            });
+
+            $('.menu_2>img:nth-child(2)')
+            .on('click', function () {
+                $('#crop').css('display', 'block');
+
+                $('#text,#select,#paint,#zoom,#navigate').css('display', 'none');
+            });
+
+            $('.menu_2>img:nth-child(3)')
+            .on('click', function () {
+                $('#text').css('display', 'block');
+
+                $('#crop,#select,#paint,#zoom,#navigate').css('display', 'none');
+            });
+
+            $('.menu_3>img:nth-child(2)')
+            .on('click', function () {
+                $('#zoom').css('display', 'block');
+
+                $('#crop,#select,#text,#paint,#navigate').css('display', 'none');
+            });
+
+            $('.menu_3>img:nth-child(3)')
+            .on('click', function () {
+                $('#paint').css('display', 'block');
+
+                $('#crop,#select,#text,#zoom,#navigate').css('display', 'none');
+            });
+
+            $('.menu_3>img:nth-child(4)')
+            .on('click', function () {
+                $('#navigate').css('display', 'block');
+
+                $('#crop,#select,#text,#zoom,#paint').css('display', 'none');
+            });
+
+
+
+            var pp1 = '.paint_box>p:nth-child(1)',
+                pp2 = '.paint_box>p:nth-child(2)',
+                pp3 = '.paint_box>p:nth-child(3)',
+                pp4 = '.paint_box>p:nth-child(4)';
+
+            $(pp1).css('border', '4px solid red');
+
+            $(pp1)
+            .on('click', function () {
+                $(pp1).css({
+                    border: '4px solid red'
+                });
+                $('.paint_box>p:nth-child(2),.paint_box>p:nth-child(3),.paint_box>p:nth-child(4)').css({
+                    border: '1px solid black'
+                });
+            });
+
+            $(pp2)
+            .on('click', function () {
+                $(pp2).css({
+                    border: '4px solid red'
+                });
+                $('.paint_box>p:nth-child(1),.paint_box>p:nth-child(3),.paint_box>p:nth-child(4)').css({
+                    border: '1px solid black'
+                });
+            });
+
+            $(pp3)
+            .on('click', function () {
+                $(pp3).css({
+                    border: '4px solid red'
+                });
+                $('.paint_box>p:nth-child(1),.paint_box>p:nth-child(2),.paint_box>p:nth-child(4)').css({
+                    border: '1px solid black'
+                });
+            });
+
+            $(pp4)
+            .on('click', function () {
+                $(pp4).css({
+                    border: '4px solid red'
+                });
+                $('.paint_box>p:nth-child(1),.paint_box>p:nth-child(2),.paint_box>p:nth-child(3)').css({
+                    border: '1px solid black'
+                });
+            });
+
+
+
+        });
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="paint_left">
+        <div class="left_paint" id="left_paint">
+            <!--<canvas id="colors_sketch"></canvas>-->
+            <img src="image/0427McolorWebp.png" />
+        </div>
+
+    </div>
+
+
+    <div class="save">
+        <p>Save</p>
+        <hr />
+        <p>Save Region</p>
+        <hr />
+        <p>Save.JPEG</p>
+        <p>Save.PNG</p>
+        <p>Save.PDF</p>
+        <p>Save.SVG</p>
+        <hr />
+        <p>Print</p>
+        <hr />
+        <p>Share</p>
+
+        <h2>x</h2>
+    </div>
+
+    <div class="import">
+        <div id="paint-app"></div>
+
+        <div class="import_box">
+            <p>Open</p>
+            <hr />
+            <p>Import</p>
+            <p>Place info...</p>
+
+            <h2>x</h2>
+        </div>
+
+    </div>
+
+    <div class="setting">
+        <div class="autosave">
+            <p>Auto Save</p>
+            <span></span>
+            <span></span>
+        </div>
+        <hr />
+        <div class="snap">
+            <p>Snap To Guides</p>
+            <span></span>
+            <span></span>
+        </div>
+        <hr />
+        <div class="theme">
+            <p>Theme</p>
+            <select>
+                <option>Light Gray</option>
+                <option>Dark Gray</option>
+                <option>Chocolate</option>
+                <option>Blue Violet</option>
+                <option>Dark Violet</option>
+                <option>Aquamarine</option>
+                <option>Moccasin</option>
+                <option>Pink</option>
+                <option>Custom...</option>
+            </select>
+        </div>
+        <h2>x</h2>
+    </div>
+
+
+
+
+    <div class="paint_right">
+
+
+        <div class="right_menu">
+            <h2><a href="a1_main2.html">
+                <img src="image/coloringwebtext.png" /></a></h2>
+            <div class="menu_1">
+                <img src="image/icon/icon1.png" />
+                <img src="image/icon/icon2.png" />
+                <img src="image/icon/icon3.png" />
+                <a href="#"
+                    onclick="window.open('a1_help.html','_blank','toolbar=no,directories=no,location=no, status=no,menubar=no,scrollbars=no,resizable=no, width=850,height=520,left=10,top=30')">
+                    <img src="image/icon/icon4.png" /></a>
+
+
+            </div>
+            <div class="menu_2">
+                <img src="image/icon/icon11.png" />
+                <img src="image/icon/icon12.png" />
+                <img src="image/icon/icon13.png" />
+                <img src="image/icon/icon14.png" />
+
+            </div>
+            <div class="menu_3">
+                <img src="image/icon/icon21.png" />
+                <img src="image/icon/icon22.png" />
+                <img src="image/icon/icon23.png" />
+                <img src="image/icon/icon24.png" />
+            </div>
+
+
+
+
+
+
+            <section id="section_base">
+                <div id="select">
+                    <button>Select all</button>
+                    <button>Copy all</button>
+                    <button>Cut all</button>
+                    <button>Paste</button>
+                    <button>Undo</button>
+                    <button>Redo</button>
+                </div>
+
+                <div id="crop">
+                    <select>
+                        <option>Size of Viewport</option>
+                        <option>1900 x 1200</option>
+                        <option>1680 x 1050</option>
+                        <option>1280 x 850</option>
+                    </select>
+                    <div class="resize">
+                        <p>
+                            Width 
+                        <input type="number" ng-model="dynamicSize.width" /><!--<button>%</button>--><select>
+                            <option>%</option>
+                            <option>px</option>
+                            <option>inch</option>
+                        </select>
+                        </p>
+                        <p>
+                            Height<input type="number" ng-model="dynamicSize.height" />
+                            <button class="lock">Lock</button>
+                            <button class="lock2">Lock</button>
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div id="text">
+                    <p class="float_left"><b>Font</b></p>
+                    <select>
+                        <option>Raleway</option>
+                        <option>Arial</option>
+                        <option>Serif</option>
+                        <option>Sans-serif</option>
+                    </select>
+                    <p class="float_left"><b>Style</b></p>
+                    <select>
+                        <option>Regular</option>
+                        <option>Italic</option>
+                        <option>Bold</option>
+                    </select>
+
+
+                    <div class="size_lead">
+                        <p>
+                            <b>Size</b>
+                            <input type="number" />
+                            &nbsp pt
+                        </p>
+                        <p>
+                            <b>Leading</b>
+                            <input type="number" />
+                            &nbsp pt
+                        </p>
+                    </div>
+                    <p class="float_left"><b>Kurning</b></p>
+                    <select>
+                        <option>Metrics</option>
+                        <option>Optical</option>
+                        <option>0</option>
+                    </select>
+
+                    <p class="tracking">
+                        <b>Tracking</b>
+                        <input type="number" />
+                    </p>
+                    <p>
+                        <span><b>Vertically</b><input type="number" class="scale_v" />
+                            &nbsp &nbsp &nbsp %</span>
+                        <span><b>Horizontally</b><input type="number" class="scale_h" />
+                            &nbsp %</span>
+                    </p>
+                </div>
+
+
+
+                <div id="layer"></div>
+
+                <div id="history"></div>
+
+                <div id="zoom">
+
+
+                    <div class="scrollbar">
+                        <input type="range" class="zoom_range" />
+                        <div class="scroll_btn"></div>
+                    </div>
+
+                    <div class="zoom_btn">
+
+                        <p class="max_btn"></p>
+                        <p class="min_btn"></p>
+                        <p class="screen_btn"></p>
+                    </div>
+
+                    <div class="zoom_control">
+                        <!--<p>
+                            Width 
+                        <input type="number" ng-model="dynamicSize.width" /><select>
+                            <option>%</option>
+                            <option>px</option>
+                            <option>inch</option>
+                        </select>
+                        </p>
+                        <p>
+                            Height<input type="number" ng-model="dynamicSize.height" />
+                            
+                        </p>-->
+                    </div>
+                </div>
+
+                <div id="paint">
+
+                    <select>
+                        <option>Vector Fill</option>
+                        <option>FIxel Fill</option>
+                    </select>
+
+                    <link rel="stylesheet" type="text/css" href="spectrum.css" />
+                    <!--<link rel="stylesheet" type="text/css" href="docs/bootstrap.css">-->
+                    <link rel="stylesheet" type="text/css" href="docs/docs.css" />
+                    <script type="text/javascript" src="docs/jquery-1.9.1.js"></script>
+                    <script type="text/javascript" src="spectrum.js"></script>
+                    <!--<script type='text/javascript' src='docs/toc.js'></script>-->
+                    <script type='text/javascript' src='docs/docs.js'></script>
+
+
+
+
+
+                    <div style='text-align: center;'>
+                        <input id="full" />
+                    </div>
+
+
+                    <!--<div class='sp-container sp-hidden'>
+                        <div class='sp-palette-container'>
+                            <div class='sp-palette sp-thumb sp-cf'></div>
+                            <div class='sp-palette-button-container sp-cf'>
+                                <button type='button' class='sp-palette-toggle'></button>
+                            </div>
+                        </div>
+                        <div class='sp-picker-container'>
+                            <div class='sp-top sp-cf'>
+                                <div class='sp-fill'></div>
+                                <div class='sp-top-inner'>
+                                    <div class='sp-color'>
+                                        <div class='sp-sat'>
+                                            <div class='sp-val'>
+                                                <div class='sp-dragger'></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='sp-clear sp-clear-display'>
+                                    </div>
+                                    <div class='sp-hue'>
+                                        <div class='sp-slider'></div>
+                                        gradientFix
+                           
+                                    </div>
+                                </div>
+                                <div class='sp-alpha'>
+                                    <div class='sp-alpha-inner'>
+                                        <div class='sp-alpha-handle'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='sp-input-container sp-cf'>
+                                <input class='sp-input' type='text' spellcheck='false' />
+                            </div>
+                            <div class='sp-initial sp-thumb sp-cf'></div>
+                            <div class='sp-button-container sp-cf'>
+                                <a class='sp-cancel' href='#'></a>
+                                <button type='button' class='sp-choose'></button>
+                            </div>
+                        </div>
+                    </div>-->
+
+
+                    <script type="text/javascript" src="docs/prettify.js"></script>
+                    <script type="text/javascript">
+
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-8259845-4']);
+                        _gaq.push(['_trackPageview']);
+
+                        (function () {
+                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                        })();
+
+                    </script>
+
+                    <!-- ----------------------------------------------------------------------------------------------- -->
+
+                    <!--<div class="container-fluid">
+                            <div class="row-fluid">
+
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div class="input-group myColorPicker">
+                                            <span class="input-group-addon myColorPicker-preview">&nbsp;</span>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="jquery-1.11.3.min.js"></script>
+                    <link href="dist/jquery.colorpicker.bygiro.min.css" rel="stylesheet" />
+                    <script src="dist/jquery.colorpicker.bygiro.min.js"></script>
+
+                    <script>
+                        $('.myColorPicker').colorPickerByGiro({
+                            preview: '.myColorPicker-preview'
+                        });
+	</script>-->
+
+                    <div class="paint_box">
+                        <p><span>COLOR</span></p>
+                        <p><span>LINEAR</span></p>
+                        <p><span>RADIAL</span></p>
+                        <p><span>PATTERN</span></p>
+                    </div>
+
+
+                </div>
+
+                <div id="navigate">
+
+                    <svg id="lala" xmlns="http://www.w3.org/2000/svg" version="1.0">
+                    </svg>
+
+
+                </div>
+
+                
+
+            </section>
+
+            
+        </div>
+
+        <div class="other_btn">
+                    <!--Click-->
+                </div>
+
+    </div>
+
+
+
+    <canvas id="c"></canvas>
+    <script src='js/kzymdn.js'></script>
+    <script src="js/index.js"></script>
+    <script src="js/navigate_index.js"></script>
+
+
+
+</body>
+</html>
