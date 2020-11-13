@@ -1,0 +1,48 @@
+﻿
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            width: 900px;
+            margin:0 auto;
+            /*background:red;*/
+        }
+        .color {
+            width: 900px;
+            height: 100%;
+            margin: 0 auto;
+            /*background: green;*/
+        }
+
+        .colors {
+            width: 100%;
+            /*height: 60px;*/
+            overflow: hidden;
+            position: relative;
+            padding-left:80px;
+            /*background-color:aqua;*/
+            box-sizing: border-box;
+            margin-bottom: 50px;
+            float:left;
+        }
+
+
+            .colors:last-child {
+                margin-bottom: 0;
+            }
+
+            .colors p {
+                width: 150px;
+                height: 150px;
+                line-height:24px;
+                overflow: hidden;
+                border:1px solid black;
+                box-sizing: border-box;
+                text-align: center;
+                padding-top: 50px;
+                margin-top:10px;
+                margin-right:5px;
+                float:left;
+            }

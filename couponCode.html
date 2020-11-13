@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function(){
+        const couponCodeFor3000
+            = 'you can delivery your food';
+
+class Couponbox {
+    constructor(wing, body, leg){
+        this.wing = wing;
+        this.body =
+            body.split('').reverse().join('');
+        this.leg = leg;
+    }
+    make(head){
+        return`${head}.couponcode:${this.body
+        }${this.leg}${this.wing}`;
+    }
+}
+
+            let cpn = new Couponbox('en', 'hc', 'ick');
+
+            console.log(cpn.make(couponCodeFor3000));
+        };
+    </script>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
